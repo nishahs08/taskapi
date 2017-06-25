@@ -3,6 +3,9 @@ const schema = mongoose.Schema;
 const userSchema = new schema({
     name : {
         type : String
+    },
+    id : {
+        type : String
     }
     
 });
