@@ -18,7 +18,8 @@ var userControllerOb  = {
 deleteData : (req,res) => { 
     var id = req.params.id;
     console.log(req.params.id);
-    user.find({id}).remove(); 
+    user.findOneAndRemove({ 'id': id })
+    .then(data => console.log(data));
     res.end();
 }
 
