@@ -19,7 +19,9 @@ deleteData : (req,res) => {
     var id = req.params.id;
     console.log(req.params.id);
     user.findOneAndRemove({ 'id': id })
-    .then(data => console.log(data));
+        .then(data => console.log(data));
+    
+    //User.findOneAndRemove returns a promise, so to execute that promise we have to chain .then method on it.
     res.end();
 }
 
