@@ -1,13 +1,19 @@
 var mongoose = require('mongoose');
-var schema = mongoose.Schema();
+var Schema = mongoose.Schema();
 
-var notesSchema = new schema({
-    user_id : String,
-    notes : String,
-    status  : { type: Boolean, required: true, unique: true, default : true }
+var notesSchema = new Schema({
+    user_id : {
+        type: String,
+        required: true
+    },
+    notes : { 
+        type: String,
+        default: ''
+    },
+    status: {
+        type: Boolean,
+        default: true
+    }
 });
 
-
-const Notes = mongoose.model('notes',noteSchema);
-
-module.exports = Notes ;
+module.exports = mongoose.model('Note', notesSchema);
