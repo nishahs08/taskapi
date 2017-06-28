@@ -1,11 +1,12 @@
-const todo = require('./../models/todo');
+// const todo = require('./../models/todo');
 
 module.exports = {
 
     index (req, res) {
-        todo.find({})
+        console.log(req.ip)
+        /*todo.find({})
             .then(data => res.json(data))
-            .catch(err => res.end(err));
+            .catch(err => res.end(err));*/
     },
 
     create (req, res) {
