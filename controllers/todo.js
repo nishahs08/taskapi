@@ -4,6 +4,7 @@ module.exports = {
 
     index (req, res) {
         console.log(req.ip)
+        res.end(req.ip)
         /*todo.find({})
             .then(data => res.json(data))
             .catch(err => res.end(err));*/
